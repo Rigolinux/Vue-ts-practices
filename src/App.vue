@@ -1,5 +1,12 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
+import { supabase } from '@/lib/supbaseClient';
+
+
+//check connection with supabase
+supabase.auth.onAuthStateChange((event:any,session:any) => {
+  console.log(event, session)
+})
 
 </script>
 
